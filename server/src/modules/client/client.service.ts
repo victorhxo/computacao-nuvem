@@ -43,6 +43,10 @@ export class ClientService {
     return await this.clientHelperService.validateClientEmail(email);
   }
 
+  async findByName(name: string): Promise<Client> {
+    return await this.clientHelperService.validateClientName(name);
+  }
+
   async update(id: string, updateClientDto: UpdateClientDto): Promise<Client> {
     const { name, cpf, birthDate, email } = updateClientDto;
 

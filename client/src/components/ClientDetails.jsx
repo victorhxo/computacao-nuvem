@@ -16,7 +16,7 @@ const ClientDetails = () => {
         setClient(response.data);
         setLoading(false);
       } catch (error) {
-        toast.error('Error fetching client details.');
+        toast.error('Erro ao buscar detalhes do cliente.');
         console.error('Error fetching client details:', error);
         setLoading(false);
       }
@@ -30,29 +30,31 @@ const ClientDetails = () => {
   }
 
   if (!client) {
-    return <p>Client não encontrado.</p>;
+    return <p>Cliente não encontrado.</p>;
   }
 
   return (
     <div className="client-details">
-      <h2>Cliente</h2>
-      <div className="form-group">
-        <label htmlFor="name">Nome:</label>
-        <p id="name">{client.name}</p>
+      <h2>Detalhes do Cliente</h2>
+      <div className="details-container">
+        <div className="detail-item">
+          <div className="detail-label">Nome</div>
+          <div className="detail-value">{client.name}</div>
+        </div>
+        <div className="detail-item">
+          <div className="detail-label">CPF</div>
+          <div className="detail-value">{client.cpf}</div>
+        </div>
+        <div className="detail-item">
+          <div className="detail-label">Aniversário</div>
+          <div className="detail-value">{client.birthDate}</div>
+        </div>
+        <div className="detail-item">
+          <div className="detail-label">Email</div>
+          <div className="detail-value">{client.email}</div>
+        </div>
       </div>
-      <div className="form-group">
-        <label htmlFor="cpf">CPF:</label>
-        <p id="cpf">{client.cpf}</p>
-      </div>
-      <div className="form-group">
-        <label htmlFor="birthDate">Aniversário:</label>
-        <p id="birthDate">{client.birthDate}</p>
-      </div>
-      <div className="form-group">
-        <label htmlFor="email">Email:</label>
-        <p id="email">{client.email}</p>
-      </div>
-      <Link to="/" className="btn btn-primary">Voltar a lista de clientes</Link>
+      <Link to="/" className="btn btn-primary">Voltar à lista de clientes</Link>
     </div>
   );
 };

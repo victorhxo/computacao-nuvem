@@ -52,6 +52,16 @@ export class ClientHelperService {
     return client;
   }
 
+  async validateClientName(name: string): Promise<Client> {
+    const client = await this.clientRepository.findByName(name);
+
+    if (!client) {
+      throw new NotFoundException('Client not found');
+    }
+
+    return client;
+  }
+
   async validateUniqueClientUpdate(
     cpf: string,
     email: string,

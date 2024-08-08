@@ -20,25 +20,27 @@ const ClientForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     try {
       await api.post('/clients', client);
       toast.success('Cliente criado com sucesso!');
       navigate('/');
     } catch (error) {
-      toast.error('Erro ao criar cliente. ' + error);
+      const { message } = error.response.data;
+      toast.error('Erro ao criar cliente. \n' + message);
       console.error('Error creating client:', error);
     }
   };
 
   return (
     <form onSubmit={handleSubmit} className="client-form">
-      <h2>Create Client</h2>
+      <h2>Criar Cliente</h2>
       <div className="form-group">
-        <label htmlFor="name">Name:</label>
+        <label htmlFor="name">Nome:</label>
         <input
           id="name"
           name="name"
-          placeholder="Name"
+          placeholder="Nome"
           value={client.name}
           onChange={handleChange}
           required
@@ -56,7 +58,7 @@ const ClientForm = () => {
         />
       </div>
       <div className="form-group">
-        <label htmlFor="birthDate">Birth Date:</label>
+        <label htmlFor="birthDate">Data de aniversário:</label>
         <input
           id="birthDate"
           name="birthDate"
@@ -78,7 +80,7 @@ const ClientForm = () => {
           required
         />
       </div>
-      <button type="submit">Create Client</button>
+      <button type="submit">Criar Cliente</button>
     </form>
   );
 };

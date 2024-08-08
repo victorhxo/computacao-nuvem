@@ -38,6 +38,10 @@ export class ClientRepository {
     return await this.prismaService.client.findFirst({ where: { email } });
   }
 
+  async findByName(name: string): Promise<Client | null> {
+    return await this.prismaService.client.findFirst({ where: { name } });
+  }
+
   async update(id: string, data: UpdateClientDto): Promise<Client> {
     const { name, cpf, birthDate, email } = data;
 

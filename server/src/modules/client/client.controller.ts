@@ -41,6 +41,11 @@ export class ClientController {
     return await this.clientService.findByEmail(email);
   }
 
+  @Get('name/:name')
+  async findByName(@Param('name') name: string): Promise<Client> {
+    return await this.clientService.findByName(name);
+  }
+
   @Patch(':id')
   async update(
     @Param('id') id: string,
