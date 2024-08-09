@@ -1,19 +1,18 @@
-// App.jsx
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import ClientForm from './components/ClientForm.jsx';
-import ClientList from './components/ClientList.jsx';
-import ClientEdit from './components/ClientEdit';
-import ClientDetail from './components/ClientDetails.jsx';
-import Header from './components/Header.jsx';
-import { ClientsProvider } from './contexts/ClientsContext';
-import './styles.css';
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import ClientForm from "./components/ClientForm.jsx";
+import ClientList from "./components/ClientList.jsx";
+import ClientEdit from "./components/ClientEdit";
+import ClientDetail from "./components/ClientDetails.jsx";
+import Header from "./components/Header.jsx";
+import { ClientsProvider } from "./contexts/ClientsContext";
+import "./styles.css";
 
 function App() {
   return (
     <Router>
       <ClientsProvider>
-        <div className="App">
+        <div className="App bg-gray-800 min-h-screen text-white">
           <Header />
           <Routes>
             <Route path="/" element={<ClientList />} />

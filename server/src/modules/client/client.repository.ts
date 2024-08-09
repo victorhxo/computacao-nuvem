@@ -10,7 +10,6 @@ export class ClientRepository {
 
   async create(data: CreateClientDto): Promise<Client> {
     const { name, cpf, birthDate, email } = data;
-    console.log(data);
 
     return await this.prismaService.client.create({
       data: {
