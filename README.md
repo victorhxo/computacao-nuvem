@@ -238,3 +238,9 @@ Para garantir que a aplicação continue rodando após fechar a conexão SSH, us
 
 - [Deploying Full-Stack Apps to AWS EC2](https://www.sammeechward.com/deploying-full-stack-js-to-aws-ec2)
 - [Crie um servidor Web e uma instância de banco de dados do Amazon RDS](https://docs.aws.amazon.com/pt_br/AmazonRDS/latest/UserGuide/TUT_WebAppWithRDS.html)
+
+
+## Desenvolvedores
+
+- [Guilherme Grego Santos](https://github.com/GregoSX)
+- [Victor Hugo Xavir Oliveira](https://github.com/victorhxo)
