@@ -243,4 +243,4 @@ Para garantir que a aplicação continue rodando após fechar a conexão SSH, us
 ## Desenvolvedores
 
 - [Guilherme Grego Santos](https://github.com/GregoSX)
-- [Victor Hugo Xavir Oliveira](https://github.com/victorhxo)
+- [Victor Hugo Xavier Oliveira](https://github.com/victorhxo)
